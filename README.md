@@ -5,11 +5,11 @@ npm install parse-server-moralis-streams
 ```
 
 
-## Requirements
+# Requirements
 
 This dashboard only runs on mongoDB.
 
-## Configuration
+# Configuration
 
 First of all add a config.json in your root folder with the following content:
 
@@ -34,11 +34,11 @@ Create a folder in your root folder called `cloud` and create 2 files inside the
   - main.js
   - streams.json
 
-### main.js
+## main.js
 
 Leave it empty. It requires to be there to export properly
 
-### streams.json
+## streams.json
 
 The Streams object define the streams that will be used by the plugin. It is an array of objects with the following properties:
   - tableName (string): The name of the table that will be used to store the stream data in mongoDB
@@ -76,3 +76,7 @@ class ParseServer {
   // ...
 }
 ```
+
+# Use Streams
+
+The endpoint to receive webhooks is `https://YOUR_SERVER_URL:PORT/streams`. This is the URL that you should use when setting up a stream.
