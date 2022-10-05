@@ -90,7 +90,7 @@ Specifying the path to your config file is required.
 
 # Setup Stream
 
-The endpoint to receive webhooks is `https://YOUR_SERVER_URL:PORT/streams`. This is the URL that you should use when setting up a stream.
+The endpoint to receive webhooks is `YOUR_SERVER_URL:PORT/streams`. This is the URL that you should use when setting up a stream.
 
 # Done!
 
