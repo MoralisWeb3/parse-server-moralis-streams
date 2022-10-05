@@ -73,7 +73,7 @@ Usually its called `config.json` add the following to the config file:
 ```json
 {
     //..
-    "moralisApiKey": "YOUR_API_KEY",
+    "moralisApiKey": "YOUR_MORALIS_WEB3_API_KEY",
     "streamsConfig": "./cloud/streams.json",
 }
 ```
