@@ -15,7 +15,7 @@ This plugin only works with MongoDB
 First clone the [parse server repo](https://github.com/parse-community/parse-server.git) and install the dependencies. The plugin was tested with v5.2.7 of parse server
 
 ```
-git clone https://github.com/parse-community/parse-server.git
+git clone -b release https://github.com/parse-community/parse-server.git
 ```
 
 ## Installation
