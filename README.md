@@ -9,7 +9,12 @@ This Plugin adapts parse-server to support [streams](https://github.com/MoralisW
 
 
 # Limitations
-This plugin only works with MongoDB
+
+- This plugin only works with MongoDB
+
+
+- Parse-Dashboard will not work due to numberDecimal, we will be releasing
+our version of dashboard with numberDecimal support soon. 
 
 # Usage
 
