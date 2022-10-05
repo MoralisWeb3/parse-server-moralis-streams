@@ -22,23 +22,9 @@ The Plugin needs to run some patches before the server starts. To do so, run the
 parse-server-moralis-streams prepare
 ```
 
-# Configuration
-
-Add the following to your Parse Server configuration:
-
-```json
-{
-    //..
-    "moralisApiKey": "YOUR_API_KEY",
-    "streamsConfig": "PATH/TO/STREAMSCONFIG.JSON",
-}
-```
-
 ## Streams Config
 
-The Streams object define the streams that will be used by the plugin. It is an array of objects with the following properties:
-  - tableName (string): The name of the table that will be used to store the stream data in MongoDB
-  - tag (string): The tag that will be used to identify the stream
+Create a folder in your project root called `cloud` and add a file called `streams.json` with the following content:
 
 Example:
 ```json
@@ -49,6 +35,23 @@ Example:
   }
   // ...
 ]
+```
+
+The Streams object defines the streams that will be used by the plugin. It is an array of objects with the following properties.:
+
+  - tableName (string): The name of the table that will be used to store the stream data in MongoDB
+  - tag (string): The tag that will be used to identify the stream
+
+## Configuration
+
+Add the following to your Parse Server configuration:
+
+```json
+{
+    //..
+    "moralisApiKey": "YOUR_API_KEY",
+    "streamsConfig": "./cloud/streams.json",
+}
 ```
 
 # Setup Stream
