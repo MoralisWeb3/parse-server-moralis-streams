@@ -1,0 +1,15 @@
+diff --git a/src/Options/index.js b/src/Options/index.js
+index 3482d88c..4808f37d 100644
+--- a/src/Options/index.js
++++ b/src/Options/index.js
+@@ -75,6 +75,10 @@ export interface ParseServerOptions {
+   databaseAdapter: ?Adapter<StorageAdapter>;
+   /* Full path to your cloud code main.js */
+   cloud: ?string;
++  /* Moralis Api Key */
++  moralisApiKey: ?string;
++  /* Path to streams configuration file  */
++  streamsConfig: ?String;
+   /* A collection prefix for the classes
+   :DEFAULT: '' */
+   collectionPrefix: ?string;

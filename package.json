@@ -1,0 +1,27 @@
+{
+  "name": "parse-server-moralis-streams",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "cli": "node cli.js"
+  },
+  "bin": {
+    "moralis-syncs-server-plugin": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "colors": "^1.4.0",
+    "commander": "^9.4.0",
+    "ethers": "^5.7.1",
+    "web3": "^1.7.5",
+    "web3-utils": "^1.7.5"
+  }
+}
