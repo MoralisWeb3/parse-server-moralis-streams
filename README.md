@@ -4,8 +4,6 @@
 
 # Usage in Parse Server
 
-Run the `prepare` script of the plugin that patches the Parse Server code to add the streams functionality.
-
 ## Installation
 
 First, install the plugin:
