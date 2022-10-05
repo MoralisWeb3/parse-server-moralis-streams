@@ -38,10 +38,11 @@ npm install parse-server-moralis-streams
 
 ## Prepare Server
 
-The Plugin needs to run some patches before the server starts. To do so, run the `prepare` script of the plugin.
+The Plugin needs to run some patches before the server starts. 
+To do so, run the `prepare` script of the plugin.
 
 ```bash
-parse-server-moralis-streams prepare
+npx parse-server-moralis-streams prepare
 ```
 
 ## Streams Config
@@ -66,7 +67,8 @@ The Streams object defines the streams that will be used by the plugin. It is an
 
 ## Configuration
 
-Add the following to your Parse Server configuration:
+You should have a [config file](http://parseplatform.org/parse-server/api/master/ParseServerOptions.html) in your root folder. 
+Usually its called `config.json` add the following to the config file:
 
 ```json
 {
@@ -75,6 +77,16 @@ Add the following to your Parse Server configuration:
     "streamsConfig": "./cloud/streams.json",
 }
 ```
+
+## Start Server
+
+Now you can run the server with following command:
+
+```bash
+npm start ./config.json
+```
+
+Specifying the path to your config file is required. 
 
 # Setup Stream
 
