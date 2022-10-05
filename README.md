@@ -1,12 +1,26 @@
+# Parse Server Moralis Streams
+
+This Plugin adapts parse-server to support [streams](https://github.com/MoralisWeb3/streams-beta) with some extra benefits:
+True Upsert: Inserting directly to mongo via a bulkUpdate allows to handle millions of rows (parse-server slows downs insertions as the rows increase)
+BigNumber Support: Allows bigNumbers to be inserted into MongoDB via numberDecimal.
+
+
 # Limitations
+This plugin only works with MongoDB
 
-- MongoDB only
+# Usage
 
-# Usage in Parse Server
+## Parse Server
+
+First clone the [parse server repo](https://github.com/parse-community/parse-server.git) and install the dependencies. The plugin was tested with v5.2.7 of parse server
+
+```
+git clone https://github.com/parse-community/parse-server.git
+```
 
 ## Installation
 
-First, install the plugin:
+Install the Plugin:
 
 ```bash
 npm install parse-server-moralis-streams
