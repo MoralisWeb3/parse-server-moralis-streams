@@ -57,4 +57,4 @@ The endpoint to receive webhooks is `https://YOUR_SERVER_URL:PORT/streams`. This
 
 # Done!
 
-After you have configured the plugin and created a stream you can see the data in the dashboard. Note that the tableName will be concatenated with `Txs` and `Logs` meaning if you have a tableName called "MyTable" you will have two collections in mongoDB called "MyTableTxs" and "MyTableLogs", you will also have ERC20Transfers/Approvals and NFTTransfers/Approvals collections by default.<s>
+After you have configured the plugin and created a stream you can see the data in the dashboard. Note that the tableName will be concatenated with `Txs` and `Logs` meaning if you have a tableName called "MyTable" you will have two collections in mongoDB called "MyTableTxs" and "MyTableLogs", you will also have ERC20Transfers/Approvals and NFTTransfers/Approvals collections by default.
