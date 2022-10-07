@@ -37,9 +37,11 @@ function prepareCheck () {
         checkIfAlreadyPrepared()
 
         // VERIFY PATCHES ARE VALID
+        applyPatch('patches/bulk-operations.patch', '--check --verbose')
         applyPatch('patches/initialize.patch', '--check --verbose')
         applyPatch('patches/number-decimal.patch', '--check --verbose')
-        applyPatch('patches/bulk-operations.patch', '--check --verbose')
+        applyPatch('patches/definitions.patch', '--check --verbose')
+        applyPatch('patches/options.patch', '--check --verbose')
 
         printLogo()
         printSuccess('Server valid. Execute prepare command to apply patches.')
@@ -57,9 +59,11 @@ function prepareParse () {
         checkIfAlreadyPrepared()
 
         // EXECUTE PATCHES
+        applyPatch('patches/bulk-operations.patch')
+        applyPatch('patches/definitions.patch')
         applyPatch('patches/initialize.patch')
         applyPatch('patches/number-decimal.patch')
-        applyPatch('patches/bulk-operations.patch')
+        applyPatch('patches/options.patch')
 
         printLogo()
         printSuccess('Server is prepared for moralis-sync webhook')
@@ -74,10 +78,12 @@ function prepareEject () {
         const pkg = loadPackageJson()
         verifyPkg(pkg)
 
-        // VERIFY PATCHES ARE VALID
+        // REVERSE
+        applyPatch('patches/bulk-operations.patch', '--reverse')
+        applyPatch('patches/definitions.patch', '--reverse')
         applyPatch('patches/initialize.patch', '--reverse')
         applyPatch('patches/number-decimal.patch', '--reverse')
-        applyPatch('patches/bulk-operations.patch', '--reverse')
+        applyPatch('patches/options.patch', '--reverse')
 
         printLogo()
         printSuccess('Server ejected moralis-sync webhook')
