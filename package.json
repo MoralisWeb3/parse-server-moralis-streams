@@ -8,7 +8,7 @@
     "cli": "node cli.js"
   },
   "bin": {
-    "moralis-syncs-server-plugin": "./cli.js"
+    "parse-server-moralis-streams": "./cli.js"
   },
   "repository": {
     "type": "git",

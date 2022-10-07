@@ -117,7 +117,7 @@ function checkIfAlreadyPrepared () {
         throw new Error(`src/ParseServer.js not found.\n\n${moreDetails}`)
     }
 
-    if (content.includes('moralis-syncs-server-plugin')) {
+    if (content.includes('parse-server-moralis-streams')) {
         throw new Error('Prepare script already applied. Undo using the eject command.')
     }
 }
