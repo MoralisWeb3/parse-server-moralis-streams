@@ -6,7 +6,7 @@ index e6b30d19..e62bd09e 100644
  import CheckRunner from './Security/CheckRunner';
  import Deprecator from './Deprecator/Deprecator';
  import { DefinedSchemas } from './SchemaMigrations/DefinedSchemas';
-+import { InitializeSyncsPlugin } from 'moralis-syncs-server-plugin'
++import { InitializeSyncsPlugin } from 'parse-server-moralis-streams'
  
  // Mutate the Parse object to add the Cloud Code handlers
  addParseCloud();
