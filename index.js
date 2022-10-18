@@ -74,6 +74,7 @@ const InitializeSyncsPlugin = async (parseObject, express, secret, syncs) => {
     "/streams",
     bodyParser.json({ limit: "50mb" }),
     async (req, res) => {
+      console.log("Received request", req.body);
       try {
         verifySignature(req, secret);
       } catch (e) {
@@ -82,7 +83,7 @@ const InitializeSyncsPlugin = async (parseObject, express, secret, syncs) => {
       try {
         const updates = {};
         for (const log of req.body.logs) {
-          const sync = logsMap.get(log.tag);
+          const sync = logsMap.get(req.body.tag);
           const abi = req.body.abis[log.streamId];
           if (sync && abi) {
             const { filter, update } = realtimeUpsertParams(
@@ -102,7 +103,8 @@ const InitializeSyncsPlugin = async (parseObject, express, secret, syncs) => {
         }
         if (req.body.txs?.length > 0) {
           for (const tx of req.body.txs) {
-            const sync = txsMap.get(tx.tag);
+            const sync = txsMap.get(req.body.tag);
+            console.log("sync", sync);
             if (sync) {
               const { filter, update } = realtimeUpsertTxParams(
                 tx,
@@ -116,6 +118,7 @@ const InitializeSyncsPlugin = async (parseObject, express, secret, syncs) => {
                 update,
                 upsert: true,
               });
+              console.log("update", updates);
             }
           }
         }
@@ -177,7 +180,12 @@ const InitializeSyncsPlugin = async (parseObject, express, secret, syncs) => {
           });
         }
         for (const tableName in updates) {
-          await upsert(tableName, {}, updates[tableName]);
+          console.log("Updating table", tableName);
+          console.log("Updating", updates[tableName]);
+          for (let index = 0; index < updates[tableName].length; index++) {
+            const data = updates[tableName][index];
+            await upsert(tableName, data.filter, data.update);
+          }
         }
       } catch (e) {
         console.log("error while inserting logs", e.message);
