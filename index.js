@@ -119,6 +119,25 @@ const InitializeSyncsPlugin = async (parseObject, express, secret, syncs) => {
             }
           }
         }
+        if (req.body.txsInternal?.length > 0) {
+          for (const tx of req.body.txsInternal) {
+            const sync = txsMap.get(req.body.tag);
+            if (sync) {
+              const { filter, update } = realtimeUpsertTxParams(
+                tx,
+                req.body.confirmed,
+                req.body.block
+              );
+              if (!updates[sync.tableName.concat("TxsInternal")])
+                updates[sync.tableName.concat("TxsInternal")] = [];
+              updates[sync.tableName.concat("TxsInternal")].push({
+                filter,
+                update,
+                upsert: true,
+              });
+            }
+          }
+        }
         if (req.body.erc20Transfers?.length > 0) {
           for (const erc20Transfer of req.body.erc20Transfers) {
             if (!updates["ERC20Transfers"]) updates["ERC20Transfers"] = [];

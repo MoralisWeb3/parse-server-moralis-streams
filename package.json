@@ -7,7 +7,6 @@
     "start": "node index.js",
     "cli": "node cli.js"
   },
-
   "repository": {
     "type": "git",
     "url": ""
